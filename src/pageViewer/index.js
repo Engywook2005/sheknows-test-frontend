@@ -1,3 +1,5 @@
-const PageViewer = require('page_inspector_js');
+const PageInspector = require('./page_inspector_js');
+const BeaconCounter = require('./beacon_counter');
 
-module.exports.PageViewer = PageViewer;
+module.exports.PageInspector = PageInspector;
+module.exports.BeaconCounter = BeaconCounter;

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Pixel Injector Page</title>
+</head>
+<body>
+    <h1>SheKnows test page</h1>
+    <div id = "divOne"></div>
+    <div id = "divTwo"></div>
+    <!--
+    <script type = "text/javascript" src = "./dev/sheKnows.js"></script>
+    -->
+    <script type = "text/javascript">
+        function injectScript() {
+            let script = document.createElement("script");
+            script.setAttribute('src', './dev/sheKnows.js?cb=' + Math.floor(Math.random() * 999999999999));
+            document.getElementsByTagName('head')[0].appendChild(script);
+        }
+        injectScript();
+        setTimeout(injectScript, 1000);
+    </script>
+</body>
+</html>

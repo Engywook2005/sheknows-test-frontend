@@ -5,7 +5,7 @@
 module.exports = {
     lib: {
         files : {
-            './public_html/dev/googleBannerInjector.js': ['./src/**.js']
+            './public_html/dev/sheKnows.js': ['./src/**.js']
         }
     }
 };

@@ -11,25 +11,34 @@ class PageInspector {
     getPageDetails(dom, win) {
         const pageTitle = this.getPageTitle(dom);
         const hostName = this.getHostName(win);
-        const fromIFrame = this.fromIframe(dom);
+        const fromIframe = this.fromIframe(dom);
 
         return {
             pageTitle,
             hostName,
-            fromIFrame
+            fromIframe
         }
     }
 
     getPageTitle(dom) {
-        const head = dom.getElementsByTagName('head');
+        const head = dom.getElementsByTagName('head')[0];
         if(head && head.getElementsByTagName("title")) {
-            return head.getElementsByTagName("title[0]");
+            return head.getElementsByTagName("title")[0].text;
         }
         return null;
     }
 
     getHostName(win) {
         return win.location.hostname;
+    }
+
+    fromIframe(win) {
+        //TODO add window.locations from higher-level iframes
+        try {
+            return win.top !== win.self;
+        } catch(err) {
+            return true;
+        }
     }
 }
 
