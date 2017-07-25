@@ -1,0 +1,17 @@
+{
+  "name": "ad-test",
+  "version": "2.0.0",
+  "license": "MIT",
+  "scripts": {
+    "server": "http-server ./public_html"
+  },
+  "dependencies": {
+    "grunt-contrib-connect": "^1.0.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "jit-grunt": "^0.10.0",
+    "load-grunt-config": "^0.19.2"
+  }
+}
